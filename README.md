@@ -1,1 +1,1 @@
-# gym-moviment
+# gym-movement
