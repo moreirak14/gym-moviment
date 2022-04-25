@@ -1,8 +1,9 @@
 import logging
+
 from fastapi import FastAPI
+
 from config import settings
 from src.commons.logger import setup_logger
-
 
 setup_logger()
 logger = logging.getLogger(__name__)
