@@ -4,6 +4,7 @@ from fastapi import FastAPI
 
 from config import settings
 from src.commons.logger import setup_logger
+from src.routers.v1 import router
 
 setup_logger()
 logger = logging.getLogger(__name__)
@@ -15,6 +16,8 @@ def get_app() -> FastAPI:
         description=settings.REST_APPLICATION_DESCRIPTION,
         openapi_url="/api/openapi.json",
     )
+
+    app.include_router(router)
 
     @app.get("/favicon.ico")
     async def root():
