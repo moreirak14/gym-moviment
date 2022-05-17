@@ -1,5 +1,6 @@
-from sqlalchemy import Table, Column, Integer, String, ForeignKey
-from sqlalchemy.orm import registry, clear_mappers, relationship
+from sqlalchemy import Column, ForeignKey, Integer, String, Table
+from sqlalchemy.orm import clear_mappers, registry, relationship
+
 from src.adapters.databases import Base
 from src.domain.lead.model import Lead
 from src.domain.user.model import User
@@ -31,4 +32,6 @@ def start_mappers():
     clear_mappers()
 
     mapper_registry.map_imperatively(User, table_user)
-    mapper_registry.map_imperatively(Lead, table_lead, properties={"user": relationship(User)})
+    mapper_registry.map_imperatively(
+        Lead, table_lead, properties={"user": relationship(User)}
+    )

@@ -3,11 +3,11 @@ from src.domain import BaseModelCustom
 
 class Lead(BaseModelCustom):
     def __int__(
-            self,
-            first_name: str,
-            last_name: str,
-            email: str,
-            phone: str,
+        self,
+        first_name: str,
+        last_name: str,
+        email: str,
+        phone: str,
     ):
         self.first_name = first_name
         self.last_name = last_name
