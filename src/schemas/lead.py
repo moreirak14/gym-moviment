@@ -3,8 +3,7 @@ from pydantic import Field
 from src.schemas import CustomBaseModel
 
 
-class Lead(CustomBaseModel):
-    owner_id: int = Field(alias="ownerId")
+class LeadSchema(CustomBaseModel):
     first_name: str = Field(alias="firstName")
     last_name: str = Field(alias="lastName")
     email: str
