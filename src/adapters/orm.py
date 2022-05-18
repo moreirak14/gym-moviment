@@ -12,8 +12,8 @@ table_user = Table(
     "user",
     metadata,
     Column("id", Integer, primary_key=True, autoincrement=True),
-    Column("email", String(60)),
-    Column("hashed_password", String(255)),
+    Column("email", String(60), nullable=False),
+    Column("hashed_password", String(255), nullable=False),
 )
 
 table_lead = Table(
@@ -23,8 +23,7 @@ table_lead = Table(
     Column("owner_id", Integer, ForeignKey("user.id")),
     Column("first_name", String(60), nullable=False),
     Column("last_name", String(60), nullable=False),
-    Column("email", String(60)),
-    Column("email", String(15)),
+    Column("email", String(60), nullable=False),
 )
 
 
