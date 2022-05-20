@@ -19,10 +19,6 @@ def get_app() -> FastAPI:
 
     app.include_router(router)
 
-    @app.get("/favicon.ico")
-    async def root():
-        return {"message": "Application Running"}
-
     return app
 
 
